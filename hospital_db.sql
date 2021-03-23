@@ -77,8 +77,8 @@ INSERT INTO `patients` (`id`, `name`, `phone`, `gender`, `health_condition`, `do
 (10, '2', '123456789', 1, 'OK', 1, 1, '2018-07-06 14:13:13'),
 (11, 'shehryar', '123456789', 1, 'OK', 1, 1, '2018-07-06 17:36:08'),
 (14, 'Coding', '3433243243', 0, 'asd', 1, 1, '2018-07-06 18:39:42'),
-(15, 'Coding', '3433243243', 0, 'asd', 1, 1, '2018-07-06 18:40:07'),
-(16, 'Coding', '3433243243', 0, 'asd', 1, 1, '2018-07-06 18:40:59');
+(15, 'Coding', '3433243243', 0, 'asd', 2, 1, '2018-07-06 18:40:07'),
+(16, 'Coding', '3433243243', 0, 'asd', 2, 1, '2018-07-06 18:40:59');
 --
 -- Indexes for dumped tables
 --
@@ -126,7 +126,7 @@ ALTER TABLE `nurses`
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 --
 -- Constraints for dumped tables
 --

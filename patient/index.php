@@ -13,8 +13,7 @@ if (isset($_GET['logout'])) {
   unset($_SESSION['name']);
   header("location: doc_login.php");
 }
-
-$dashboard = "Admin";
+$dashboard = "Patient";
 $content = '<div class="row">
   <div class="col-xs-12">
   <div class="box">
@@ -27,11 +26,9 @@ $content = '<div class="row">
         <thead>
         <tr>
           <th>Name</th>
-          <th>Email</th>
           <th>Phone</th>
           <th>Gender</th>
-          <th>Specialist</th>
-          <th>Action</th>
+          <th>Health Condition</th>
         </tr>
         </thead>
         <tbody>
@@ -51,20 +48,17 @@ include('../master.php');
   $(document).ready(function() {
     $.ajax({
       type: "GET",
-      url: "../api/doctor/read.php",
+      url: "../api/patient/read.php",
       dataType: 'json',
       success: function(data) {
         var response = "";
         for (var user in data) {
           response += "<tr>" +
             "<td>" + data[user].name + "</td>" +
-            "<td>" + data[user].email + "</td>" +
             "<td>" + data[user].phone + "</td>" +
             "<td>" + ((data[user].gender == 0) ? "Male" : "Female") + "</td>" +
-            "<td>" + data[user].specialist + "</td>" +
-            "<td><a href='/doctor/update.php?id=" + data[user].id + "'>Edit</a> | <a href='#' onClick=Remove('" + data[user].id + "')>Remove</a></td>" +
-
-            "</tr>";
+            "<td>" + data[user].health_condition + "</td>"
+          "</tr>";
         }
         $(response).appendTo($("#doctors")); //JQuery
       }

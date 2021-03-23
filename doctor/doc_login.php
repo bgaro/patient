@@ -1,6 +1,6 @@
 <?php
- session_start(); 
- 
+session_start();
+
 $dashboard = 'Doctor';
 
 $content = '<div class="row">
@@ -40,13 +40,14 @@ include('../master.php');
 <!-- page script -->
 <script>
   function LoginDoctor() {
-  
+
     $.ajax({
       type: "POST",
       url: '../api/doctor/login.php',
       dataType: 'json',
       data: {
-        id: $("#name").val(),
+        id: $("#id").val(),
+        name: $("#name").val(),
         password: $("#password").val()
       },
       error: function(result) {
@@ -55,7 +56,7 @@ include('../master.php');
       success: function(result) {
         if (result['status'] == true) {
           alert(result['message']);
-          window.location.href = '/doctor';
+          window.location.href = '/patient';
         } else {
           alert(result['message']);
         }

@@ -164,8 +164,8 @@ class Doctor
                 FROM
                     " . $this->table_name . " 
                 WHERE
-                    id= '" . $this->id . "' AND password='" . $this->password ."'";
-        
+                    name= '" . $this->name . "' AND password='" . $this->password . "'";
+
         // prepare query statement
         $stmt = $this->conn->prepare($query);
 

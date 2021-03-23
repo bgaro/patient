@@ -24,7 +24,7 @@
     <!-- Main Header -->
     <header class="main-header">
       <!-- Logo -->
-      <a href="index.php" class="logo">
+      <a href="/doctor/index.php" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>M</b>BD</span>
         <!-- logo for regular state and mobile devices -->
@@ -91,7 +91,7 @@
                 <div class="m-4 badge bg-primary"><?php echo $_SESSION['name']; ?></div>
                 <div> Status</div>
                 <!-- Status -->
-                <div class=""><a href="doctor/index.php?logout='1'"><i class="fa fa-circle text-success"></i> Logout</a>
+                <div class=""><a href="/doctor/index.php?logout='1'"><i class="fa fa-circle text-success"></i> Logout</a>
                 </div>
               <?php endif ?>
             </div>
@@ -123,6 +123,17 @@
             <ul class="treeview-menu">
               <li><a href="/doctor/create.php">Create Doctor</a></li>
               <li><a href="/doctor">All Doctors</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-medkit"></i> <span>Patients</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="/patient/create.php">Create Patient</a></li>
+              <li><a href="/patient">All Patients</a></li>
             </ul>
           </li>
         </ul>

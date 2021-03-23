@@ -18,15 +18,17 @@ $doctor = new Doctor($db);
 
 //Ce script doit avoir le moyen de récupérer ce identifiant
 
-$doctor->id = isset($_POST['id']) ? $_POST['id'] : die(); //http://monsite/doctor/single.php?
+$doctor->name = isset($_POST['name']) ? $_POST['name'] : die(); //http://monsite/doctor/single.php?
 $doctor->password = isset($_POST['password']) ? $_POST['password'] : die();
 $doctor->password = base64_encode($_POST['password']);
 $stmt = $doctor->login();
 if ($stmt->rowCount() == 1) {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     $doctor->name = $row['name'];
+    $doctor->id = $row['id'];
 
     $_SESSION['name'] = $doctor->name;
+    $_SESSION['id'] = $doctor->id;
     $_SESSION['success'] = "You are now logged in";
     $doctor_arr = array(
         "status" => true,
