@@ -16,8 +16,8 @@ $content = '<div class="row">
     <form role="form">
       <div class="box-body">
         <div class="form-group">
-          <label for="exampleInputName1">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter Name">
+          <label for="exampleInputName1">Email</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter Email">
         </div>
         
         <div class="form-group">
@@ -47,7 +47,7 @@ include('../master.php');
       dataType: 'json',
       data: {
         id: $("#id").val(),
-        name: $("#name").val(),
+        mail: $("#name").val(),
         password: $("#password").val()
       },
       error: function(result) {
