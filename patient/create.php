@@ -50,7 +50,7 @@ $content = '<div class="row">
                       </div>
                       <!-- /.box-body -->
                       <div class="box-footer">
-                        <input type="button" class="btn btn-primary" onClick="AddDoctor()" value="Submit"></input>
+                        <input type="button" class="btn btn-primary" onClick="AddPatient()" value="Submit"></input>
                       </div>
                     </form>
                   </div>
@@ -60,7 +60,7 @@ $content = '<div class="row">
 include('../master.php');
 ?>
 <script>
-  function AddDoctor() {
+  function AddPatient() {
 
     $.ajax({
       type: "POST",
@@ -79,7 +79,7 @@ include('../master.php');
       },
       success: function(result) {
         if (result['status'] == true) {
-          alert("Successfully Added New Doctor!");
+          alert("Successfully Added New Patient!");
           window.location.href = '/doctor';
         } else {
           alert(result['message']);

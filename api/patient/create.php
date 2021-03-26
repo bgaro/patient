@@ -33,7 +33,7 @@ if ($patient->create()) {
 } else {
     $doctor_arr = array(
         "status" => false,
-        "message" => "Email already exists!"
+        "message" => "Can't create this patient"
     );
 }
 
